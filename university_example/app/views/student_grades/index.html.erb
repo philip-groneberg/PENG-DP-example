@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Student Grades</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Matrikl-Nr.</th>
+      <th>Name</th>
+      <th>Lecture</th>
+      <th>Semester</th>
+      <th>Points</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @student_grades.each do |student_grade| %>
+      <tr>
+        <td><%= student_grade.student.matriculation_nr %></td>
+        <td><%= student_grade.student.first_name %> <%= student_grade.student.last_name %></td>
+        <td><%= student_grade.lecture.name %></td>
+        <td><%= student_grade.lecture.semester.name %></td>
+        <td><%= student_grade.points %></td>
+        <td><%= link_to 'Show', student_grade %></td>
+        <td><%= link_to 'Edit', edit_student_grade_path(student_grade) %></td>
+        <td><%= link_to 'Destroy', student_grade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Student Grade', new_student_grade_path %>

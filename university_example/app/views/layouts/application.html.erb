@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>UniversityExample</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <p><%= link_to "Students", students_path %> | <%= link_to "Lectures", lectures_path %> | <%= link_to "Semesters", semesters_path %> | <%= link_to "Grades", student_grades_path %></p>
+    <%= yield %>
+  </body>
+</html>

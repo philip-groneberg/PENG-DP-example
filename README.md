@@ -4,4 +4,4 @@ This repository includes the example integration of the [PengDp Gem](https://git
 
 To run the ruby benchmark in [university-example/script/benchmarks](https://github.com/philip-groneberg/PENG-DP-example/tree/master/university_example/script/benchmarks) execute:
 
-  $ ruby peng_dp_[function name].rb
+    $ ruby peng_dp_[function name].rb

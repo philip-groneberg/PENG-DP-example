@@ -2,7 +2,56 @@
 
 <h1>Student Grades</h1>
 
-<table>
+<p>Numbers of Grades: <%= @student_grades.count %></p>
+<p>Numbers of Students: <%= Student.all.count %></p>
+
+<table class="grade-table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Real Value</th>
+      <th>DP Value (epsilon = 1)</th>
+      <th>DP Value (epsilon = 2)</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>Sum of points:</td>
+      <td><%= @student_grades.sum(:points)  %></td>
+      <td><%= @student_grades.dp_sum(:points)  %></td>
+      <td><%= @student_grades.dp_sum(:points, 2)  %></td>
+    </tr>
+    <tr>
+      <td>Average of points:</td>
+      <td><%= @student_grades.average(:points)  %></td>
+      <td><%= @student_grades.dp_average(:points)  %></td>
+      <td><%= @student_grades.dp_average(:points, 2)  %></td>
+    </tr>
+    <tr>
+      <td>Number of Grades greater than 50:</td>
+      <td><%= @student_grades.where("points > ?", 50).count  %></td>
+      <td><%= @student_grades.dp_count_above(:points, 50)  %></td>
+      <td><%= @student_grades.dp_count_above(:points, 50, 2)  %></td>
+    </tr>
+    <tr>
+      <td>Number of Grades in total:</td>
+      <td><%= @student_grades.count %></td>
+      <td><%= @student_grades.dp_count %></td>
+      <td><%= @student_grades.dp_count(:id, 2)  %></td>
+    </tr>
+    <tr>
+      <td>Maximum reached points:</td>
+      <td><%= @student_grades.maximum(:points)  %></td>
+      <td><%= @student_grades.dp_maximum(:points)  %></td>
+      <td><%= @student_grades.dp_maximum(:points, 2)  %></td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+<table class="grade-table">
   <thead>
     <tr>
       <th>Matrikl-Nr.</th>

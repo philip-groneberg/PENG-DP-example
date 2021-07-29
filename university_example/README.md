@@ -1,24 +1,14 @@
-# README
+# PengDP Example Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This Rails project is a small demonstration on how to use the [PengDp Gem](https://github.com/philip-groneberg/PENG-DP). The project reflects a simple student grading application that uses a dataset created through the [Faker Gem](https://github.com/faker-ruby/faker). To populate the database run:
 
-Things you may want to cover:
+  $ rails db:seed
 
-* Ruby version
+The `peng_dp` gem is added inside the [Gemfile](https://github.com/philip-groneberg/PENG-DP-example/blob/master/university_example/Gemfile).
 
-* System dependencies
+```ruby
+# Gem for differential privacy
+gem 'peng_dp'
+```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The example integration of the gem can then be found inside [app/views/student_grades/index.html.erb](https://github.com/philip-groneberg/PENG-DP-example/blob/master/university_example/app/views/student_grades/index.html.erb).
